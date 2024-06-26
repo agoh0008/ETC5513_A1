@@ -1,0 +1,326 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage{pdflscape}
+\usepackage{tabu}
+\usepackage{threeparttable}
+\usepackage{threeparttablex}
+\usepackage[normalem]{ulem}
+\usepackage{makecell}
+\usepackage{xcolor}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={Assignment 1},
+  pdfauthor={Alexandra Goh},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{\textbf{Assignment 1}}
+\author{Alexandra Goh}
+\date{2023-03-17}
+
+\begin{document}
+\maketitle
+
+{
+\setcounter{tocdepth}{2}
+\tableofcontents
+}
+\hypertarget{introduction}{%
+\section{\texorpdfstring{\textbf{Introduction}}{Introduction}}\label{introduction}}
+
+We are going to research about public expenditure on education and how this differs among various countries. Reason being, education is considered as a fundamental human right, with governments being expected to provide accessible education for their citizens. Education is also a key driver of economic growth and development; however, education inequality is still prevalent among countries, which can be partly attributed to some countries investing significantly more in education than others.
+
+By understanding the disparities in education spending between different countries, we can identify gaps in education funding and pinpoint areas where additional resources may be needed (e.g.~advocacy efforts, targeted investments such as early childhood education/teacher training).
+
+\hypertarget{research-question}{%
+\section{\texorpdfstring{\textbf{Research Question}}{Research Question}}\label{research-question}}
+
+The specific question we would like to investigate is how does a country's spending on education as a share of government expenditure and GDP relate to its population size? By understanding how significantly population size influences public expenditure on education, this can help provide insights to policymakers on resource allocation strategies.
+
+We can also better understand the relationship between education spending and education quality; for instance, if we find that governments of larger countries spend a large proportion of both their budgets and GDP on education, we can infer that population size does affect education prioritization decisions and as a result, education quality.
+
+\hypertarget{data-set-introduction}{%
+\section{\texorpdfstring{\textbf{Data Set Introduction}}{Data Set Introduction}}\label{data-set-introduction}}
+
+The dataset renamed as \href{https://ourworldindata.org/financing-education}{``education''} provides an overall measure of different countries' government expenditure on education, both expressed as a percentage of total government expenditure on all sectors and as a percentage of total GDP. The dataset also includes each respective country's population size (historical estimates).
+
+The variable time spans initially covered 1970 -- 2020 data; however, it should be noted that there are missing data in certain years for some countries which poses a limitation to our analysis. After accounting for this limitation, the resulting dataframe covers data from 1980-2018.
+
+Variable types and characteristics can be further observed in Table 1 below.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{education }\OtherTok{\textless{}{-}} \FunctionTok{read\_csv}\NormalTok{(}\StringTok{"educationspending.csv"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{education }\OtherTok{\textless{}{-}}\NormalTok{ education }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{rename}\NormalTok{(}\AttributeTok{Country =}\NormalTok{ Entity,}
+        \StringTok{\textasciigrave{}}\AttributeTok{\% of Government Expenditure}\StringTok{\textasciigrave{}} \OtherTok{=} \StringTok{\textasciigrave{}}\AttributeTok{Share of education in government expenditure (\% of government expenditure) (World Bank (2019))}\StringTok{\textasciigrave{}}\NormalTok{,}
+        \StringTok{\textasciigrave{}}\AttributeTok{\% of GDP}\StringTok{\textasciigrave{}} \OtherTok{=} \StringTok{\textasciigrave{}}\AttributeTok{Government expenditure on education, total (\% of GDP)}\StringTok{\textasciigrave{}}\NormalTok{, }
+         \AttributeTok{Population =} \StringTok{\textasciigrave{}}\AttributeTok{Population (historical estimates)}\StringTok{\textasciigrave{}}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{filter}\NormalTok{(}\SpecialCharTok{!}\FunctionTok{is.na}\NormalTok{(}\StringTok{\textasciigrave{}}\AttributeTok{\% of Government Expenditure}\StringTok{\textasciigrave{}}\NormalTok{)) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{filter}\NormalTok{(}\SpecialCharTok{!}\FunctionTok{is.na}\NormalTok{(}\StringTok{\textasciigrave{}}\AttributeTok{\% of GDP}\StringTok{\textasciigrave{}}\NormalTok{)) }\SpecialCharTok{\%\textgreater{}\%}
+\NormalTok{  dplyr}\SpecialCharTok{::}\FunctionTok{select}\NormalTok{(Country, Code, Year, }\StringTok{\textasciigrave{}}\AttributeTok{\% of Government Expenditure}\StringTok{\textasciigrave{}}\NormalTok{, }\StringTok{\textasciigrave{}}\AttributeTok{\% of GDP}\StringTok{\textasciigrave{}}\NormalTok{, Population)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{education }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{summary}\NormalTok{() }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{kable}\NormalTok{(}\AttributeTok{caption =} \StringTok{"Table 1: Education Spending between Countries of Different Population Sizes (measured as \% of Government Expenditure and \% of GDP)"}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{kable\_styling}\NormalTok{(}\AttributeTok{bootstrap\_options =} \FunctionTok{c}\NormalTok{(}\StringTok{"striped"}\NormalTok{, }\StringTok{"hover"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\textbackslash begin\{table\}
+
+\textbackslash caption\{\label{tab:table}Table 1: Education Spending between Countries of Different Population Sizes (measured as \% of Government Expenditure and \% of GDP)\}
+\centering
+
+\begin{tabular}[t]{l|l|l|l|l|l|l}
+\hline
+  &   Country &     Code &      Year & \% of Government Expenditure &    \% of GDP &   Population\\
+\hline
+ & Length:2472 & Length:2472 & Min.   :1980 & Min.   : 0.8457 & Min.   : 0.6225 & Min.   :1.974e+04\\
+\hline
+ & Class :character & Class :character & 1st Qu.:1999 & 1st Qu.:11.1651 & 1st Qu.: 3.1991 & 1st Qu.:2.912e+06\\
+\hline
+ & Mode  :character & Mode  :character & Median :2005 & Median :14.0676 & Median : 4.3856 & Median :8.547e+06\\
+\hline
+ & NA & NA & Mean   :2004 & Mean   :14.7381 & Mean   : 4.4589 & Mean   :7.821e+07\\
+\hline
+ & NA & NA & 3rd Qu.:2011 & 3rd Qu.:17.7557 & 3rd Qu.: 5.4632 & 3rd Qu.:2.588e+07\\
+\hline
+ & NA & NA & Max.   :2018 & Max.   :44.8018 & Max.   :14.1988 & Max.   :7.427e+09\\
+\hline
+\end{tabular}
+
+\textbackslash end\{table\}
+
+\hypertarget{data-set-description-subsection}{%
+\section{\texorpdfstring{\textbf{Data Set Description Subsection}}{Data Set Description Subsection}}\label{data-set-description-subsection}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{print}\NormalTok{(}\FunctionTok{paste}\NormalTok{(}\StringTok{"The \textasciigrave{}education\textasciigrave{} data frame has"}\NormalTok{, }\FunctionTok{dim}\NormalTok{(education)[}\DecValTok{1}\NormalTok{], }\StringTok{"observations and"}\NormalTok{, }\FunctionTok{dim}\NormalTok{(education)[}\DecValTok{2}\NormalTok{], }\StringTok{"variables."}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "The `education` data frame has 2472 observations and 6 variables."
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{knitr}\SpecialCharTok{::}\FunctionTok{include\_graphics}\NormalTok{(}\StringTok{"C:}\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{Users}\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{USER}\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{Monash}\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{ETC5513}\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{Assignment1}\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{etc5513{-}assignment{-}1{-}part{-}b{-}agoh0008}\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{Images}\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{dim.png"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=25.71in]{Images/dim} \end{center}
+
+The figure above displays the code used to display the number of observations and variables in the \texttt{education} dataset: dim(education){[}1{]} retrieves the number of rows (observations) whereas dim(education){[}2{]} retrieves the number of columns (variables).
+
+Variable types can be seen below as well:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{head}\NormalTok{(education, }\DecValTok{2}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 2 x 6
+##   Country     Code   Year `% of Government Expenditure` `% of GDP` Population
+##   <chr>       <chr> <dbl>                         <dbl>      <dbl>      <dbl>
+## 1 Afghanistan AFG    2010                          17.1       3.48   28189672
+## 2 Afghanistan AFG    2011                          16.0       3.46   29249156
+\end{verbatim}
+
+\hypertarget{results}{%
+\section{\texorpdfstring{\textbf{Results}}{Results}}\label{results}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{education }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{mutate}\NormalTok{ (}\AttributeTok{Population =}\NormalTok{ Population}\SpecialCharTok{/}\DecValTok{1000000}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{filter}\NormalTok{(Year }\SpecialCharTok{==} \DecValTok{2017}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =} \StringTok{\textasciigrave{}}\AttributeTok{\% of Government Expenditure}\StringTok{\textasciigrave{}}\NormalTok{,}
+             \AttributeTok{y =} \StringTok{\textasciigrave{}}\AttributeTok{\% of GDP}\StringTok{\textasciigrave{}}\NormalTok{, }
+             \AttributeTok{col =}\NormalTok{ Country,}
+             \AttributeTok{size =}\NormalTok{ Population)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{() }\SpecialCharTok{+} \FunctionTok{scale\_x\_log10}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{scale\_color\_viridis\_d}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{x =} \StringTok{"Education Spending (\% of Government Expenditure)"}\NormalTok{,}
+       \AttributeTok{y =} \StringTok{"Education Spending (\% of GDP)"}\NormalTok{,}
+       \AttributeTok{title =} \StringTok{"Figure 1: Education Spending (\% of Government Expenditure vs. \% of Total GDP)"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{guides}\NormalTok{(}\AttributeTok{color =} \ConstantTok{FALSE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics{Figures/graphs-1} \end{center}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{In Figure 1 (using 2017 as a base year), we can see there is a positive correlation: this infers that countries which spend a large share of their income on education also have higher education prioritization within government budgets as well.}
+\item
+  \emph{However, there is no obvious pattern between population sizes and countries' education prioritization. Some larger countries spend a smaller budget share on education than others (and vice versa), indicating that population size may not be a major factor in determining education spending and other factors (such as overall economic growth/development) may have a higher influence.}
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{education }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{filter}\NormalTok{(Year }\SpecialCharTok{==} \DecValTok{2017}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{mutate}\NormalTok{ (}\AttributeTok{Population =}\NormalTok{ Population}\SpecialCharTok{/}\DecValTok{1000000}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{Population\_Group =} \FunctionTok{cut}\NormalTok{(Population, }\AttributeTok{breaks =} \FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{10}\NormalTok{, }\DecValTok{50}\NormalTok{, }\ConstantTok{Inf}\NormalTok{),}
+                                \AttributeTok{labels =} \FunctionTok{c}\NormalTok{(}\StringTok{"Small"}\NormalTok{, }\StringTok{"Medium"}\NormalTok{, }\StringTok{"Large"}\NormalTok{))) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Population\_Group,}
+             \AttributeTok{y =} \StringTok{\textasciigrave{}}\AttributeTok{\% of Government Expenditure}\StringTok{\textasciigrave{}}\NormalTok{)) }\SpecialCharTok{+}
+\FunctionTok{geom\_boxplot}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Figure 2: Distribution of Education Spending grouped by population sizes"}\NormalTok{,}
+       \AttributeTok{x =} \StringTok{"Population Size"}\NormalTok{,}
+       \AttributeTok{y =} \StringTok{"Education Spending (\% of Government Expenditure)"}\NormalTok{) }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics{Figures/graphs1-1} \end{center}
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{In Figure 2, on average, countries with larger populations tend to spend a smaller proportion of their government expenditure on education, whereas smaller countries allocate a higher proportion of their government budget on education (due to the ``small population'' country group having the highest median).}
+\item
+  \emph{However, it should be noted there is high variability in the box plot above, with some countries spending much more or much less than the median. This means education spending as a percentage of total government expenditure still varies widely among countries even within the same population size group.}
+\end{itemize}
+
+\hypertarget{conclusion}{%
+\section{\texorpdfstring{\textbf{Conclusion}}{Conclusion}}\label{conclusion}}
+
+Overall, we can conclude that population size alone may not be a major determining factor in education spending decisions by governments. There could be other factors involved such as level of economic development/economic conditions, available resources, government priorities/political goals, other demographic variables (e.g.~age structure), education system structures and more which have a greater influence over education spending.
+
+For instance, we observed from Figure 1 that countries which spend a high proportion of their income on education also have education taking up a large proportion of their government budgets; this infers a possible linear relationship between income and education spending. Hence, it would be interesting to research further into what else potentially influences public spending on education and their level of significance.
+
+\hypertarget{appendix}{%
+\section{\texorpdfstring{\textbf{Appendix}}{Appendix}}\label{appendix}}
+
+\hypertarget{figure-1-using-chatgpt-to-enhance-existing-code}{%
+\subsubsection{Figure 1: Using ChatGPT to Enhance Existing Code}\label{figure-1-using-chatgpt-to-enhance-existing-code}}
+
+\begin{center}\includegraphics[width=24in]{Images/figure1chatgpt} \end{center}
+
+\end{document}

@@ -48,4 +48,3 @@ Population size alone may not be a major determinant of education spending. Othe
 - ggplot2
 - knitr
 - kableExtra
-
