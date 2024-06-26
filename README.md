@@ -38,7 +38,7 @@ Population size alone may not be a major determinant of education spending. Othe
 
 ## How to Use This Repository
 1. Clone the repository to your local machine.
-2. Load the dataset (educationspending.csv) and the R script provided.
+2. Load the dataset (`educationspending.csv`) and the R script provided.
 3. Run the analysis code to reproduce the results and visualizations.
 4. Review the README and documentation for a detailed understanding of the project.
 
